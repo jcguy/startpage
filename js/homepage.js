@@ -15,24 +15,13 @@ function startTime() {
     var s = today.getSeconds();
     var day = today.getDay();
     var am_pm = "AM";
-    var greet = "Good Morning, Danish."
     m = checkTime(m);
     s = checkTime(s);
-    if(h > 12 && h < 17) {
-        greet = "Good Afternoon, Danish.";
-    }
-    else if(h <= 24) {
-        greet = "Good Evening, Danish.";
-        if(h == 24 || h == 0) {
-            h = 0;
-            greet = "Good Morning, Danish."
-        }
-    }
     h = checkTime(h);
-    document.getElementById('clock').innerHTML = h + ":" + m + weekday[day];
-    document.getElementById('greeting').innerHTML = greet;
+    document.getElementById('clock').innerHTML = h + ":" + m + ":" + s + weekday[day];
     var t = setTimeout(startTime, 500);
 }
+
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i;
